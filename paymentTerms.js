@@ -36,7 +36,7 @@ app.post('/process-payment-terms', async (req, res) => {
     const key = ["termos"]; // Keys to search for in metafields
     
     // Make a PUT request to update customer details and metafields in Shopify
-    const response = await axios.put(`https://${shopifyStore}/admin/api/${apiVersion}/customers/${customerId}/metafields.json`, {
+    const response = await axios.post(`https://${shopifyStore}/admin/api/${apiVersion}/customers/${customerId}/metafields.json`, {
         "metafield": {
           "namespace": "custom",
           "key": key,
