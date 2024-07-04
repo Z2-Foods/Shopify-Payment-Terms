@@ -1,0 +1,17 @@
+{
+    "name": "z2server - payment terms",
+    "version": "1.0.0",
+    "description": "z2 server - payment terms",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "nodemon ./paymentTerms.js",
+        "start": "node paymentTerms.js"
+    },
+    "dependencies": {
+        "axios": "^1.6.7",
+        "cors": "^2.8.5",
+        "express": "^4.17.1",
+        "node-fetch": "^3.3.2"
+    }
+}
