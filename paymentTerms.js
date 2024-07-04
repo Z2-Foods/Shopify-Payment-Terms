@@ -39,7 +39,7 @@ app.post('/process-payment-terms', async (req, res) => {
     const response = await axios.post(`https://${shopifyStore}/admin/api/${apiVersion}/customers/${customerId}/metafields.json`, {
         "metafield": {
           "namespace": "custom",
-          "key": key,
+          "key": "termos",
           "value": customMetafieldsValues[key]
         }
     }, {
