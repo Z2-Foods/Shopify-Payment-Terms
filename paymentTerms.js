@@ -23,9 +23,11 @@ app.post('/process-payment-terms', async (req, res) => {
   if (customFieldValue !== null && customerId !== null) {
     // Call the updateMetafields function only when values are not null or undefined
     updateMetafields(customFieldValue, customerId);
+     console.log(`SUCESS`);
     res.status(200).send('Form data received successfully');
   } else {
     // Handle the case where values are null or undefined
+     console.log(`ERROR`);
     res.status(400).send('Invalid input: values are missing');
   }
 });
@@ -35,7 +37,7 @@ app.post('/process-payment-terms', async (req, res) => {
   try {
     
     const key = ["termos"]; // Keys to search for in metafields
-    
+     console.log(`FUNCTION`);
     // Make a PUT request to update customer details and metafields in Shopify
     const response = await axios.post(`https://${shopifyStore}/admin/api/${apiVersion}/customers/${customerId}/metafields.json`, {
         "metafield": {
@@ -49,8 +51,7 @@ app.post('/process-payment-terms', async (req, res) => {
         'X-Shopify-Access-Token': accessToken,
       },
     });
-
-    //console.log('PUT Response:', response.data);
+    console.log('PUT Response:', response.data);
   } catch (error) {
     console.error('PUT Error:', error.response ? error.response.data : error.message);
     
