@@ -44,7 +44,7 @@ app.post('/process-payment-terms', async (req, res) => {
         'X-Shopify-Access-Token': accessToken,
       },
     });
-    console.log('POST Response:', response.data);
+    //console.log('POST Response:', response.data);
   } catch (error) {
     console.error('POST Error:', error.response ? error.response.data : error.message);
     
