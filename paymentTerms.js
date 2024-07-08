@@ -17,7 +17,8 @@ app.use(cors());
 app.post('/process-payment-terms', async (req, res) => {
   const customFieldValue = req.body.terms;
   const customerId = req.body.customerId;
-  
+
+  console.log(`IN THE SERVER`);
   // Check if customFieldValue are not null or undefined
   if (customFieldValue !== null && customerId !== null) {
     // Call the updateMetafields function only when values are not null or undefined
