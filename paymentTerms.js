@@ -16,8 +16,6 @@ app.use(cors());
 app.post('/process-payment-terms', async (req, res) => {
   const customFieldValue = req.body.terms;
   const customerId = req.body.customerId;
-  console.log("customFieldValue: ", customFieldValue);
-  console.log("customerId: ", customerId);
   
   // Check if customFieldValue are not null or undefined
   if (customFieldValue !== null && customerId !== null) {
@@ -32,8 +30,6 @@ app.post('/process-payment-terms', async (req, res) => {
 
  // Function to update customer metafields in Shopify
  async function updateMetafields(customMetafieldsValue, customerId) {
-    console.log("updateMetafields customMetafieldsValues: ", customMetafieldsValue);
-    console.log("updateMetafields customerId: ", customerId);
   try {
     // Make a PUT request to update customer details and metafields in Shopify
     const response = await axios.post(`https://${shopifyStore}/admin/api/${apiVersion}/customers/${customerId}/metafields.json`, {
